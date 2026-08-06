@@ -11,6 +11,10 @@ application {
     mainClass.set("com.example.panaqet.server.ApplicationKt")
 }
 
+kotlin {
+    jvmToolchain(21)
+}
+
 
 dependencies {
     implementation(libs.ktor.server.core)
