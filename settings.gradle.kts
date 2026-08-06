@@ -24,7 +24,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "PanaQet"
 
-if (System.getenv("RAILWAY_STATIC_URL") == null) {
+if (System.getenv("RAILWAY_PROJECT_ID") == null) {
     include(":app")
 }
 include(":server")

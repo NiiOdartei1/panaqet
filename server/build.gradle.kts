@@ -1,3 +1,4 @@
+plugins {
     id("org.jetbrains.kotlin.jvm")
     id("application")
     alias(libs.plugins.kotlin.serialization)
@@ -36,5 +37,3 @@ dependencies {
     
     testImplementation(libs.junit)
 }
-
-
