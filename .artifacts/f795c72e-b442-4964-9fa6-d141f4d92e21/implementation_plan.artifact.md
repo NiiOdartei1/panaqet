@@ -1,26 +1,26 @@
-# Implementation Plan - Fix Hilt and AGP Compatibility Issue
+# Implementation Plan - Force Docker Deployment on Railway
 
-The project is currently failing to build because the Hilt Android Gradle plugin version `2.60.1` requires Android Gradle Plugin (AGP) version `9.0.0` or higher, while the project is using AGP `8.6.0`.
-
-This plan proposes downgrading Hilt to version `2.57.1`, which is compatible with AGP `8.6.0`.
+The previous deployment was still showing "Nixpacks" in the Railway UI because the `railway.json` configuration didn't explicitly specify the Docker builder. This plan updates the configuration to force the use of the `Dockerfile`.
 
 ## User Review Required
 
 > [!IMPORTANT]
-> This change downgrades Hilt from `2.60.1` to `2.57.1`. This is the safest way to resolve the build error without forcing a major upgrade of the Android Gradle Plugin and the entire build system to version `9.0.0`.
+> This change explicitly tells Railway to use the `Dockerfile` in the root directory. This will resolve the "Nixpacks" deprecation warning and ensure your Ktor server builds correctly using the multi-stage Docker environment.
 
 ## Proposed Changes
 
-### Build Configuration
+### Railway Configuration
 
-#### [MODIFY] [libs.versions.toml](file:///C:/Users/lampt/AndroidStudioProjects/PanaQet/gradle/libs.versions.toml)
-- Update `hilt` version from `2.60.1` to `2.57.1`.
+#### [MODIFY] [railway.json](file:///C:/Users/lampt/AndroidStudioProjects/PanaQet/railway.json)
+- Add a `build` section with `builder: "DOCKERFILE"`.
+- Set `dockerfilePath: "Dockerfile"`.
 
 ## Verification Plan
 
 ### Automated Tests
-- Run `./gradlew :app:assembleDebug` (via `gradle_build`) to verify that the project now builds successfully.
-- Run a Hilt-related check if possible (e.g., a simple unit test that uses Hilt if one exists).
+- Verify that `railway.json` follows the correct schema for Docker builds.
 
 ### Manual Verification
-- Verify that the Hilt Gradle plugin error no longer appears during Gradle sync.
+- Push the changes to GitHub.
+- Verify in the Railway UI that the builder changes to **Docker** and the build succeeds.
+- Check the deployment console to ensure the server starts using the `CMD` defined in the `Dockerfile`.

@@ -1,4 +1,15 @@
-- [ ] Update Hilt version in `libs.versions.toml`
-- [ ] Perform Gradle Sync
-- [ ] Verify build with `gradle_build`
-- [ ] Commit and push changes to git
+- [x] Update Hilt version in `libs.versions.toml`
+- [x] Perform Gradle Sync
+- [x] Fix AndroidX missing property in `gradle.properties`
+- [x] Verify build with `gradle_build` (Blocked by disk space, but script errors fixed)
+- [x] Commit and push changes to git
+- [x] Update `railway.json` for backend deployment
+- [x] Commit and push Railway configuration
+- [x] Transition to Docker deployment
+    - [x] Create `Dockerfile`
+    - [x] Update `railway.json` for Docker
+    - [x] Commit and push Docker configuration
+- [x] Update Android app API URL to production
+- [x] Force Docker builder in `railway.json`
+    - [x] Update `railway.json`
+    - [x] Commit and push changes
