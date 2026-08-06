@@ -1,0 +1,4 @@
+- [ ] Update Hilt version in `libs.versions.toml`
+- [ ] Perform Gradle Sync
+- [ ] Verify build with `gradle_build`
+- [ ] Commit and push changes to git
