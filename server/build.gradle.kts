@@ -1,7 +1,7 @@
-plugins {
     id("org.jetbrains.kotlin.jvm")
     id("application")
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ktor)
 }
 
 group = "com.example.panaqet"
