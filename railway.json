@@ -5,6 +5,7 @@
     "dockerfilePath": "Dockerfile"
   },
   "deploy": {
+    "startCommand": "./server/bin/server",
     "restartPolicyType": "ON_FAILURE",
     "healthcheckPath": "/",
     "numReplicas": 1
