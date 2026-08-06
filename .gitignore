@@ -6,11 +6,11 @@ local.properties
 
 # Idea
 .idea/
-*.iws
-*.ipr
 
 # Build
 build/
+*/build/
+**/build/
 bin/
 out/
 
