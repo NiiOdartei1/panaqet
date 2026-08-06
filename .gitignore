@@ -1,15 +1,26 @@
+# General
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+.gradle/
 local.properties
+.DS_Store
+
+# Idea
+.idea/
+*.iws
+*.ipr
+
+# Build
+build/
+bin/
+out/
+
+# Android
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Logs
+*.log
+
+# Secrets
+Github_PAT
